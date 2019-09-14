@@ -11,32 +11,40 @@
       return randomChoice;
     }
     function userPlay() {
-      let userChoice = "Rock";
-      return userChoice;
+      return prompt("Lets Play Rock, Paper, Scissors! What is your choice?");
     }
-    function playRound(playerSelection, computerSelection) {
-	  let x = playerSelection;
-      let y = computerSelection;
+    function playRound(x, y) {
+      if (x==y) { return "It's a Tie!" }
 
+      else if (x == "Rock" && y == "Scissors") {
+        return "Opponent picked " + y + ", You Win! " + x + " Beats " + y;
+      }
+      else if (x == "Rock" && y ==  "Paper") {
+        return "Opponent picked " + y + ", You Lose! " + y + " Beats " + x;
+      }
+      else if (x == "Paper" && y == "Rock") {
+        return "Opponent picked " + y + ", You Win! " + x + " Beats " + y;
+      }
+      else if (x == "Paper" && y ==  "Scissors") {
+        return "Opponent picked " + y + ", You Lose! " + y + " Beats " + x;
+      }
+      else if (x == "Scissors" && y == "Paper") {
+        return "Opponent picked " + y + ", You Win! " + x + " Beats " + y;
+      }
+      else if (x == "Scissors" && y ==  "Rock") {
+        return "Opponent picked " + y + ", You Lose! " + y + " Beats " + x;
+      }
 
-      if (x == "Rock" && y == "Scissors") {
-        return "You Win! Rock Beats Scissors"
-      }
-      else if ( x == "Rock" && y ==  "Paper") {
-        return "You Lose! Paper beats Rock"
-      }
-      else if ( x == "Rock" && y == "Rock") {
-        return "Tie! Rock and Rock"
-      }
-      else { return "else case"}
+      
+
+      
 
 
 
     }
 
-    const playerSelection = userPlay()
-    const computerSelection = computerPlay()
-    console.log(playRound(playerSelection, computerSelection))
+    
+    console.log(playRound(userPlay(), computerPlay()));
 
 
 
