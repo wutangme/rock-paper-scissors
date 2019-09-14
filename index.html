@@ -5,36 +5,44 @@
 </head>
 <body>
   <script>
+    function capitalizeFirstLetter(str) {
+      let lowercaseChar = str.toLowerCase();
+      let firstLetter = str.charAt(0);
+      let capitalizeFirst = firstLetter.toUpperCase();
+      let lowercaseBody = lowercaseChar.substring(1);
+      return capitalizeFirst + lowercaseBody;
+    }
     function computerPlay() { 
       let compChoice = ["Rock","Paper","Scissors"];
       let randomChoice = compChoice[Math.floor(Math.random()*compChoice.length)];
       return randomChoice;
     }
     function userPlay() {
-      return prompt("Lets Play Rock, Paper, Scissors! What is your choice?");
+      let input = prompt("Lets Play Rock, Paper, Scissors! What is your choice?");
+      return capitalizeFirstLetter(input);
     }
     function playRound(x, y) {
-      if (x==y) { return "It's a Tie!" }
+      if (x==y) { alert ("It's a Tie!") }
 
       else if (x == "Rock" && y == "Scissors") {
-        return "Opponent picked " + y + ", You Win! " + x + " Beats " + y;
+        alert ("Opponent picked " + y + ", You Win! " + x + " Beats " + y);
       }
       else if (x == "Rock" && y ==  "Paper") {
-        return "Opponent picked " + y + ", You Lose! " + y + " Beats " + x;
+        alert ("Opponent picked " + y + ", You Lose! " + y + " Beats " + x);
       }
       else if (x == "Paper" && y == "Rock") {
-        return "Opponent picked " + y + ", You Win! " + x + " Beats " + y;
+        alert ("Opponent picked " + y + ", You Win! " + x + " Beats " + y);
       }
       else if (x == "Paper" && y ==  "Scissors") {
-        return "Opponent picked " + y + ", You Lose! " + y + " Beats " + x;
+        alert ("Opponent picked " + y + ", You Lose! " + y + " Beats " + x);
       }
       else if (x == "Scissors" && y == "Paper") {
-        return "Opponent picked " + y + ", You Win! " + x + " Beats " + y;
+        alert ("Opponent picked " + y + ", You Win! " + x + " Beats " + y);
       }
       else if (x == "Scissors" && y ==  "Rock") {
-        return "Opponent picked " + y + ", You Lose! " + y + " Beats " + x;
+        alert ("Opponent picked " + y + ", You Lose! " + y + " Beats " + x);
       }
-
+      else { alert ("Please Try Again!") }
       
 
       
