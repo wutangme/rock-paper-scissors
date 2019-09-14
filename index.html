@@ -22,27 +22,47 @@
       return capitalizeFirstLetter(input);
     }
     function playRound(x, y) {
-      if (x==y) { alert ("It's a Tie!") }
-
+      let playerScore = 0;
+      let computerScore = 0;
+    
+      if (x==y) { 
+        alert ("It's a Tie!") 
+        alert ("The Score Is " + playerScore + " - " + computerScore);
+      }
       else if (x == "Rock" && y == "Scissors") {
+        playerScore = ++playerScore;
         alert ("Opponent picked " + y + ", You Win! " + x + " Beats " + y);
+        alert ("The Score Is " + playerScore + " - " + computerScore);
       }
       else if (x == "Rock" && y ==  "Paper") {
+        computerScore = ++computerScore;
         alert ("Opponent picked " + y + ", You Lose! " + y + " Beats " + x);
+        alert ("The Score Is " + playerScore + " - " + computerScore);
       }
       else if (x == "Paper" && y == "Rock") {
+        playerScore = ++playerScore;
         alert ("Opponent picked " + y + ", You Win! " + x + " Beats " + y);
+        alert ("The Score Is " + playerScore + " - " + computerScore);
       }
       else if (x == "Paper" && y ==  "Scissors") {
+        computerScore = ++computerScore;
         alert ("Opponent picked " + y + ", You Lose! " + y + " Beats " + x);
+        alert ("The Score Is " + playerScore + " - " + computerScore);
       }
       else if (x == "Scissors" && y == "Paper") {
+        playerScore = ++playerScore;
         alert ("Opponent picked " + y + ", You Win! " + x + " Beats " + y);
+        alert ("The Score Is " + playerScore + " - " + computerScore);
       }
       else if (x == "Scissors" && y ==  "Rock") {
+        computerScore = ++computerScore;
         alert ("Opponent picked " + y + ", You Lose! " + y + " Beats " + x);
+        alert ("The Score Is " + playerScore + " - " + computerScore);
       }
-      else { alert ("Please Try Again!") }
+      else {
+        alert ("Please Try Again!") 
+        alert ("The Score Is " + playerScore + " - " + computerScore);
+      }
       
 
       
