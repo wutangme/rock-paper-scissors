@@ -4,16 +4,39 @@
   <title>Web Development 101 PROJECT: Rock Paper Scissors</title>
 </head>
 <body>
-
   <script>
     function computerPlay() { 
-        let compChoice = ["rock","paper","scissors"];
-        let randomChoice = compChoice[Math.floor(Math.random()*compChoice.length)];
-        return randomChoice;
+      let compChoice = ["Rock","Paper","Scissors"];
+      let randomChoice = compChoice[Math.floor(Math.random()*compChoice.length)];
+      return randomChoice;
     }
-   console.log(computerPlay());
+    function userPlay() {
+      let userChoice = "Rock";
+      return userChoice;
+    }
+    function playRound(playerSelection, computerSelection) {
+	  let x = playerSelection;
+      let y = computerSelection;
 
 
+      if (x == "Rock" && y == "Scissors") {
+        return "You Win! Rock Beats Scissors"
+      }
+      else if ( x == "Rock" && y ==  "Paper") {
+        return "You Lose! Paper beats Rock"
+      }
+      else if ( x == "Rock" && y == "Rock") {
+        return "Tie! Rock and Rock"
+      }
+      else { return "else case"}
+
+
+
+    }
+
+    const playerSelection = userPlay()
+    const computerSelection = computerPlay()
+    console.log(playRound(playerSelection, computerSelection))
 
 
 
