@@ -39,13 +39,17 @@
         alert ("The Score Is " + playerScore + " - " + computerScore);
       }
       else {
-        alert ("Error, Final Score Invalid, Please Restart Game") 
+        alert ("Error, Final Score Invalid, Please Restart Game"); 
         alert ("The Score Is " + playerScore + " - " + computerScore);
       }
     }
     function gameOfFive() { 
-      for (i = 0; i < 5; i++) { playRound(userPlay(), computerPlay()); }
+      for (i = 0; i < 5; i++) { 
+        playRound(userPlay(), computerPlay()); }
       alert ("The Final Score Is " + playerScore + " - " + computerScore);
+      if (playerScore > computerScore) { alert ("You Win!"); }
+        else if (playerScore == computerScore) { alert ("Tie Game!"); }
+        else { alert ("You Lose!"); }
     }
     console.log(gameOfFive());
   </script>
