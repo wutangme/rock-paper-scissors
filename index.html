@@ -5,6 +5,8 @@
 </head>
 <body>
   <script>
+    let playerScore = 0;
+    let computerScore = 0;
     function capitalizeFirstLetter(str) {
       let lowercaseChar = str.toLowerCase();
       let firstLetter = str.charAt(0);
@@ -21,10 +23,7 @@
       let input = prompt("Lets Play Rock, Paper, Scissors! What is your choice?");
       return capitalizeFirstLetter(input);
     }
-    function playRound(x, y) {
-      let playerScore = 0;
-      let computerScore = 0;
-    
+    function playRound(x, y, player, computer) {
       if (x==y) { 
         alert ("It's a Tie!") 
         alert ("The Score Is " + playerScore + " - " + computerScore);
@@ -60,22 +59,17 @@
         alert ("The Score Is " + playerScore + " - " + computerScore);
       }
       else {
-        alert ("Please Try Again!") 
+        alert ("Error, Final Score Invalid, Please Restart Game") 
         alert ("The Score Is " + playerScore + " - " + computerScore);
       }
-      
-
-      
-
-
-
     }
-
-    
-    console.log(playRound(userPlay(), computerPlay()));
-
-
-
+    function gameOfFive() { 
+      for (i = 0; i < 5; i++) {
+        playRound(userPlay(), computerPlay());
+        }
+      alert ("The Final Score Is " + playerScore + " - " + computerScore);
+    }
+    console.log(gameOfFive());
   </script>
 </body>
 </html>
