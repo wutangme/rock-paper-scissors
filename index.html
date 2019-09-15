@@ -28,32 +28,12 @@
         alert ("It's a Tie!") 
         alert ("The Score Is " + playerScore + " - " + computerScore);
       }
-      else if (x == "Rock" && y == "Scissors") {
+      else if (x == "Rock" && y == "Scissors" || x == "Paper" && y == "Rock" || x == "Scissors" && y == "Paper")  {
         playerScore = ++playerScore;
         alert ("Opponent picked " + y + ", You Win! " + x + " Beats " + y);
         alert ("The Score Is " + playerScore + " - " + computerScore);
       }
-      else if (x == "Rock" && y ==  "Paper") {
-        computerScore = ++computerScore;
-        alert ("Opponent picked " + y + ", You Lose! " + y + " Beats " + x);
-        alert ("The Score Is " + playerScore + " - " + computerScore);
-      }
-      else if (x == "Paper" && y == "Rock") {
-        playerScore = ++playerScore;
-        alert ("Opponent picked " + y + ", You Win! " + x + " Beats " + y);
-        alert ("The Score Is " + playerScore + " - " + computerScore);
-      }
-      else if (x == "Paper" && y ==  "Scissors") {
-        computerScore = ++computerScore;
-        alert ("Opponent picked " + y + ", You Lose! " + y + " Beats " + x);
-        alert ("The Score Is " + playerScore + " - " + computerScore);
-      }
-      else if (x == "Scissors" && y == "Paper") {
-        playerScore = ++playerScore;
-        alert ("Opponent picked " + y + ", You Win! " + x + " Beats " + y);
-        alert ("The Score Is " + playerScore + " - " + computerScore);
-      }
-      else if (x == "Scissors" && y ==  "Rock") {
+      else if (x == "Rock" && y ==  "Paper" || x == "Paper" && y ==  "Scissors" || x == "Scissors" && y ==  "Rock") {
         computerScore = ++computerScore;
         alert ("Opponent picked " + y + ", You Lose! " + y + " Beats " + x);
         alert ("The Score Is " + playerScore + " - " + computerScore);
@@ -64,9 +44,7 @@
       }
     }
     function gameOfFive() { 
-      for (i = 0; i < 5; i++) {
-        playRound(userPlay(), computerPlay());
-        }
+      for (i = 0; i < 5; i++) { playRound(userPlay(), computerPlay()); }
       alert ("The Final Score Is " + playerScore + " - " + computerScore);
     }
     console.log(gameOfFive());
